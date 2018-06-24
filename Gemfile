@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem 'faker'
 gem 'redcarpet'
 gem 'jquery-ui-rails'
+gem 'bootstrap-sass'
 
 
 group :development, :test do
