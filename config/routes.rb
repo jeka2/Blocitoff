@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
+  get '/user' => 'users#show', as: :user_root
+
+
 
   devise_for :users
   root 'users#show'
