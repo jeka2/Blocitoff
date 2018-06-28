@@ -4,9 +4,33 @@ test_user = User.create!(
   confirmed_at: Time.now
 )
 
-50.times do
+5.times do
+  User.create!(
+    email: Faker::Internet.email,
+    password: "password",
+    confirmed_at: Time.now
+  )
+end
+
+all_users = User.all
+
+10.times do
   Item.create!(
     name: Faker::Simpsons.character,
     user: test_user
 )
 end
+
+50.times do
+  Item.create!(
+    name: Faker::Simpsons.character,
+    user: all_users.sample
+)
+end
+
+
+
+
+
+
+p "seeded"
