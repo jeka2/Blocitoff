@@ -1,6 +1,3 @@
 <%= item.name %>
-<br>
-<%= p item.id %>
-<br>
-<%= current_user %>
+<%= link_to "", user_item_path(@user, item), remote: true, method: :delete, class: 'glyphicon glyphicon-ok' %>
 <br>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :items, only: [:create, :new, :destroy]
   end
 
-  get '/user' => 'users#show', as: :user_root
+  get '/my_profile' => 'users#show', as: :user_root
 
   root 'users#show'
 end

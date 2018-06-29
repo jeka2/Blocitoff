@@ -8,9 +8,9 @@
   <br>
   <%= link_to "Create an item", new_user_item_path(current_user, :items) %>
   <div class="pull-right">
-    <%= "List of items:" unless @all_items.count == 0%>
+    <%= "List of items:" unless @items.count == nil%>
     <br>
-    <% @all_items.each do |item| %>
+    <% @items.each do |item| %>
       <%= render item %>
     <% end %>
   </div>
