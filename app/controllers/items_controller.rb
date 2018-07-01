@@ -1,4 +1,10 @@
 class ItemsController < ApplicationController
+
+  respond_to do |format|
+    format.html
+    format.js {render layout: false}
+  end
+  
   def new
     @user = User.find(params[:user_id])
     @item = Item.new
@@ -15,6 +21,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    
+    Item.find(params[:id]).destroy
   end
 end

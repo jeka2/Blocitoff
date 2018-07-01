@@ -1,14 +1,7 @@
-<%= params %>
-<%= @user_id %>
 <div class="user-info">
-  <%= current_user.items.count %>
-  <%= "Your id: #{current_user.id}" %>
-  <br>
-  <%= "Your email: #{current_user.email}" %>
-  <br>
   <%= link_to "Create an item", new_user_item_path(current_user, :items) %>
   <div class="pull-right">
-    <%= "List of items:" unless @items.count == nil%>
+    <%= "Tasks to complete:" unless @items.count == nil%>
     <br>
     <% @items.each do |item| %>
       <%= render item %>
