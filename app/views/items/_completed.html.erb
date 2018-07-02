@@ -1,0 +1,3 @@
+<%= item.name %>
+<%= link_to "", user_completed_item_path(@user_id, item, name: item.name), method: :delete, class: 'glyphicon glyphicon-ok completed_check_list', remote: true %>
+<br>

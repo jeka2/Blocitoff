@@ -1,10 +1,5 @@
 class ItemsController < ApplicationController
 
-  respond_to do |format|
-    format.html
-    format.js {render layout: false}
-  end
-  
   def new
     @user = User.find(params[:user_id])
     @item = Item.new
@@ -21,6 +16,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    Item.find(params[:id]).destroy
+    @item = Item.find(params[:id])
+    CompletedItem.create!(name: @item.name, user_id: @item.user_id)
+    @item.destroy
   end
 end

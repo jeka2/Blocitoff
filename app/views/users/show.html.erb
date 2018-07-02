@@ -4,7 +4,17 @@
     <%= "Tasks to complete:" unless @items.count == nil%>
     <br>
     <% @items.each do |item| %>
-      <%= render item %>
+      <dev class="unchecked_items">
+        <%= render item %>
+      </dev>
+    <% end %>
+    <br>
+    <%= "Completed Tasks:" unless @completed_items.count == nil%>
+    <br>
+    <% @completed_items.each do |item| %>
+      <div class="checked_items">
+        <%= render 'items/completed', item: item %>
+      </div>
     <% end %>
   </div>
 </div>
