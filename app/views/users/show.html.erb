@@ -1,15 +1,13 @@
 <div class="user-info">
-  <%= link_to "Create an item", new_user_item_path(current_user, :items), id: "new_link", remote: true %>
+  <%= render partial: 'items/link', locals: { user: current_user } %>
   <div class="pull-right">
     <%= "Tasks to complete:" unless @items.count == nil%>
-    <br>
-    <% @items.each_with_index do |item, index| %>
-      <div class = "tasks" id="uncompleted_list_item_<%=index+1%>">
-        <%= render item %>
-      </div>
-    <% end %>
-      <div class = "tasks" id="completed_list_1">
-
+      <div id="tasks">
+        <% @items.each_with_index do |item, index| %>
+          <div id="uncompleted_list_item_<%=index+1%>">
+            <%= render item %>
+          </div>
+        <% end %>
       </div>
     <br>
   </div>

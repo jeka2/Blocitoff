@@ -1,3 +1,1 @@
-$('#new_link').click(function(){
-  alert("clicked");
-});
+$('#new_link').replaceWith("<%= j render 'form', user: @user, item: @item %>")
