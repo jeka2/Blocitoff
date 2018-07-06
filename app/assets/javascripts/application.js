@@ -15,8 +15,3 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-$(document).ready(function(){
-  $('.check_list').on('click', function(){
-      $(this).removeClass('glyphicon glyphicon-remove-sign').toggleClass('glyphicon glyphicon-ok').appendTo('.checked_items')
-  });
-});

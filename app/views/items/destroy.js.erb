@@ -1,0 +1,6 @@
+$(".check_list_<%=@item.id%>").click(function(){
+  var okSign = $(this).removeClass("glyphicon glyphicon-remove-sign").addClass("glyphicon glyphicon-ok").append(".uncompleted_list_<%=@item.id%>");
+  console.log(okSign);
+  $(this).remove();
+  $(".completed_list_1").append(okSign);
+});

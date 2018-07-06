@@ -3,6 +3,9 @@ class ItemsController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @item = Item.new
+    respond_to do |format|
+      format.json {render layout: false}
+    end
   end
 
   def create
@@ -17,7 +20,5 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    CompletedItem.create!(name: @item.name, user_id: @item.user_id)
-    @item.destroy
   end
 end

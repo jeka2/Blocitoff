@@ -17,14 +17,16 @@ all_users = User.all
 10.times do
   Item.create!(
     name: Faker::Simpsons.character,
-    user: test_user
+    user: test_user,
+    completed: false
 )
 end
 
 50.times do
   Item.create!(
     name: Faker::Simpsons.character,
-    user: all_users.sample
+    user: all_users.sample,
+    completed: false
 )
 end
 
