@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
     @item_name = params[:item][:name]
     if current_user.items.create!(name: @item_name, user: current_user)
       flash[:notice] = "The item was created"
-      @last_item = Item.last
     else
       flash[:notice] = "The item could not be created"
     end

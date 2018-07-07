@@ -1,14 +1,14 @@
 <div class="user-info">
-  <%= render partial: 'items/link', locals: { user: current_user } %>
+  <%= render partial: 'items/link', locals: { user: current_user } unless @user_id != current_user.id %>
   <div class="pull-right">
     <%= "Tasks to complete:" unless @items.count == nil%>
-      <div id="tasks">
-        <% @items.each_with_index do |item, index| %>
-          <div id="uncompleted_list_item_<%=index+1%>">
-            <%= render item %>
-          </div>
+      <ul id="tasks">
+        <% @sorted_items.each_with_index do |item, index| %>
+          <li id="incompleted_list_item_<%=index+1%>">
+            <%= render partial: 'items/item', locals: { order: index + 1, item: item } %>
+          </li>
         <% end %>
-      </div>
+      </ul>
     <br>
   </div>
 </div>
