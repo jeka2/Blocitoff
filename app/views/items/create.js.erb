@@ -1,3 +1,2 @@
 $(".submission-form").replaceWith("<%= j render 'link', user: current_user %>");
-var container = "<%= j @last_item %>";
-console.log(container);
+$("#tasks").prepend("<%= j render 'item', user: current_user, item: @item %>");
