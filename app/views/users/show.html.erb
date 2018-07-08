@@ -2,10 +2,12 @@
   <%= render partial: 'items/link', locals: { user: current_user } unless @user_id != current_user.id %>
   <div class="pull-right">
     <%= "Tasks to complete:" unless @items.count == nil%>
-      <ul class="list-unstyled">
+      <ul id="tasks" class="list-unstyled">
         <% @sorted_items.each_with_index do |item, index| %>
           <li id="item_<%=item.id%>">
-            <%= render partial: 'items/item', locals: { user: @user_id, item: item } %>
+            <% p item.id %>
+            <% p item.expires_at %>
+            <%= render partial: 'items/item', locals: { user: @user_id, item: item, expires_at: item.expires_at } %>
           </li>
         <% end %>
       </ul>

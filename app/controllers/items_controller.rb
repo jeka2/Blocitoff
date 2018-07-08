@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(name: params[:item][:name], user: current_user)
+    @item = Item.new(name: params[:item][:name], user: current_user, expires_at: Time.now + 7.days)
     if @item.save
       flash[:notice] = "The item was created"
     else

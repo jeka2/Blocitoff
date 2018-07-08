@@ -18,7 +18,7 @@ all_users = User.all
   Item.create!(
     name: Faker::Simpsons.character,
     user: test_user,
-    completed: false
+    expires_at: Time.now + 7.days
 )
 end
 
@@ -26,7 +26,7 @@ end
   Item.create!(
     name: Faker::Simpsons.character,
     user: all_users.sample,
-    completed: false
+    expires_at: Time.now + 7.days
 )
 end
 
