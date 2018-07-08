@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20180707225218) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "expires_at"
+    t.datetime "expires_at"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
