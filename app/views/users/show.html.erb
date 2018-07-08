@@ -5,8 +5,6 @@
       <ul id="tasks" class="list-unstyled">
         <% @sorted_items.each_with_index do |item, index| %>
           <li id="item_<%=item.id%>">
-            <% p item.id %>
-            <% p item.expires_at %>
             <%= render partial: 'items/item', locals: { user: @user_id, item: item, expires_at: item.expires_at } %>
           </li>
         <% end %>

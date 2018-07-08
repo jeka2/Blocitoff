@@ -1,6 +1,6 @@
 <%= link_to "delete", user_item_path(user, item), method: :delete, class: "check_list_#{item.id} padding-left: 20%", remote: true unless item.user != current_user %>
 <div class="item-styling">
   <div class="padding-right: 10px"><%= item.name %></div>
-  <%= "#{converter(expires_at)} left to complete"%>
+  <%= "#{time_left(expires_at)}"%>
 </div>
 <br>

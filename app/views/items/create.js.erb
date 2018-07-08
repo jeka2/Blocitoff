@@ -1,5 +1,5 @@
 var id = ("<%= @item.id %>");
-console.log("<%= @item.expires_at %>")
 $(".submission-form").replaceWith("<%= j render 'link', user: current_user %>");
 $("#tasks").prepend(
-  $('<li id=item_' + id + '>').append("<%= j render 'item', user: current_user, item: @item, expires_at: @item.expires_at %>"));
+  $('<li id=item_' + id + '>').append("<%= j render 'item', user: current_user, item: @item, expires_at: @item.expires_at %>")
+);
